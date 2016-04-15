@@ -1,0 +1,35 @@
+{
+  "name": "asterisk-ami-event-utils",
+  "version": "1.0.0",
+  "description": "Asterisk AMI Event Utils for NodeJS (ES2015)",
+  "main": "./lib/index.js",
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "scripts": {
+    "test": "mocha ./test",
+    "coverage": "istanbul cover _mocha -- -R spec"
+  },
+  "directories": {
+    "lib": "./lib",
+    "test": "./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:BelirafoN/asterisk-ami-event-utils.git"
+  },
+  "keywords": [
+    "voip",
+    "asterisk",
+    "ami"
+  ],
+  "author": {
+    "name": "Alex Voronysnaky",
+    "email": "belirafon@gmail.com"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5"
+  },
+  "license": "MIT"
+}
