@@ -73,6 +73,18 @@ describe('Event utils test', () => {
             });
         });
 
+        it('with empty field', () => {
+            testEvent = [
+                    'Event: AgentRingNoAnswer',
+                    'Queue:'
+                ].join(CRLF) + CRLF.repeat(2);
+
+            assert.deepEqual(eventUtil.toObject(testEvent), {
+                Event: 'AgentRingNoAnswer',
+                Queue: ''
+            });
+        });
+
     });
 
     describe('rawToArray', () => {
