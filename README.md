@@ -1,6 +1,7 @@
 # Asterisk AMI Event Utils for NodeJS (ES2015) 
 
 [![Build Status](https://travis-ci.org/BelirafoN/asterisk-ami-event-utils.svg?branch=master)](https://travis-ci.org/BelirafoN/asterisk-ami-event-utils)
+[![Coverage Status](https://coveralls.io/repos/belirafon/asterisk-ami-event-utils/badge.svg)](https://coveralls.io/r/belirafon/asterisk-ami-event-utils)
 
 Some service functions for parse\stringify raw events from Asterisk AMI's socket. 
 This library is a part of other library for work with Asterisk AMI, which will be release soon. 
