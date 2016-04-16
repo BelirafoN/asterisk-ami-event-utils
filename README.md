@@ -11,15 +11,15 @@ support `>=4.0.0`
 
 ### Available methods 
 
-* `.toString(eventBuffer)` - converts raw AMI's event from buffer to utf-8 string
+* **`.toString(eventBuffer)`** - converts raw AMI's event from buffer to utf-8 string
 and trim all CRLF in start or end of this string;
-* `.toObject(eventBuffer)` - converts raw AMI's event from buffer to object;
-* `.toJson(eventBuffer)` - converts raw AMI's event from buffer to json-string;
-* `.toArray(eventBuffer)` - converts raw AMI's event from buffer to paired-array, 
+* **`.toObject(eventBuffer)`** - converts raw AMI's event from buffer to object;
+* **`.toJson(eventBuffer)`** - converts raw AMI's event from buffer to json-string;
+* **`.toArray(eventBuffer)`** - converts raw AMI's event from buffer to paired-array,  
 like this: *[['prop_name_1', 'prop_val_1'], ..., ['prop_name_n', 'prop_val_n']]*;
-* `.fromObject(eventObject)` - converts event from object to string, which ready for send into  
+* **`.fromObject(eventObject)`** - converts event from object to string, which ready for send into  
 socket of Asterisk AMI socket; 
-* `.fromArray(eventArray)` - converts event from paired-array to string, which ready for send into  
+* **`.fromArray(eventArray)`** - converts event from paired-array to string, which ready for send into  
 socket of Asterisk AMI socket;
 
 ### Usage 
