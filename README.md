@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/BelirafoN/asterisk-ami-event-utils.svg?branch=master)](https://travis-ci.org/BelirafoN/asterisk-ami-event-utils)
 [![Coverage Status](https://coveralls.io/repos/BelirafoN/asterisk-ami-event-utils/badge.svg)](https://coveralls.io/r/BelirafoN/asterisk-ami-event-utils)
 
-Some service functions for parse\stringify raw events from Asterisk AMI's socket. 
+Some service functions for parse\stringify raw events|responses|actions from Asterisk AMI's socket. 
 This library is a part of other library for work with Asterisk AMI, which will be release soon. 
 
 ### NodeJS versions 
@@ -21,7 +21,9 @@ like this: *[['prop_name_1', 'prop_val_1'], ..., ['prop_name_n', 'prop_val_n']]*
 * **`.fromObject(eventObject)`** - converts event from object to string, which ready for send into  
 socket of Asterisk AMI socket; 
 * **`.fromArray(eventArray)`** - converts event from paired-array to string, which ready for send into  
-socket of Asterisk AMI socket;
+socket of Asterisk AMI socket; 
+* **`.fromString(eventString)`** - prepares event's string into correct form for send into 
+socket of Asterisk AMI socket; 
 
 ### Usage 
 
