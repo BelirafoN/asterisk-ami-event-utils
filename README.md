@@ -6,6 +6,12 @@
 Some service functions for parse\stringify raw data packages (events, actions, responses, extended responses) 
 from Asterisk AMI's socket. This library is a part of other library for work with Asterisk AMI, which will be release soon. 
 
+### Install 
+
+```bash
+npm i asterisk-ami-event-utils
+```
+
 ### NodeJS versions 
 
 support `>=4.0.0`
