@@ -9,7 +9,7 @@ from Asterisk AMI's socket. This library is a part of other library for work wit
 ### Install 
 
 ```bash
-npm i asterisk-ami-event-utils
+$ npm i asterisk-ami-event-utils
 ```
 
 ### NodeJS versions 
