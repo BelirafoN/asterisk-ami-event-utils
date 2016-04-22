@@ -34,7 +34,7 @@ describe('Event utils test', () => {
         ]);
     });
 
-    describe('rawToString', () => {
+    describe('bufferToString', () => {
 
         it('with event\'s raw string', () => {
             testEvent = CRLF.repeat(5) + testEvent + CRLF.repeat(5);
@@ -54,6 +54,64 @@ describe('Event utils test', () => {
                 Event: 'AgentRingNoAnswer',
                 Privilege: 'agent,all',
                 Queue: '592'
+            });
+        });
+
+        it('with action\'s raw string', () => {
+            let commandStr = [
+                    'Action: command',
+                    'Command: Core Show Channels'
+                ].join(CRLF) + CRLF.repeat(2);
+
+            assert.deepEqual(eventUtil.toObject(commandStr), {
+                Action: 'command',
+                Command: 'Core Show Channels'
+            });
+        });
+
+        it('with simple response\'s raw string', () => {
+            let commandStr = [
+                    'Response: Pong',
+                    'Value: 12345'
+                ].join(CRLF) + CRLF.repeat(2);
+
+            assert.deepEqual(eventUtil.toObject(commandStr), {
+                Response: 'Pong',
+                Value: '12345'
+            });
+        });
+
+        it('with extended response\'s raw string', () => {
+            let commandStr = [
+                    'extended row 1',
+                    'extended row 2'
+                ].join(CRLF) + CRLF.repeat(2);
+
+            assert.deepEqual(eventUtil.toObject(commandStr), {
+                Response: null,
+                $content: [
+                    'extended row 1',
+                    'extended row 2'
+                ].join(CRLF)
+            });
+        });
+
+        it('with extended response\'s raw string (with end command)', () => {
+            let commandStr = [
+                    'Response: Follows',
+                    'Privilege: Command',
+                    'Channel (Context Extension Pri ) State Appl. Data',
+                    '0 active channel(s)',
+                    '--END COMMAND--'
+                ].join(CRLF) + CRLF.repeat(2);
+            console.log(eventUtil.toObject(commandStr));
+            assert.deepEqual(eventUtil.toObject(commandStr), {
+                Response: 'Follows',
+                Privilege: 'Command',
+                $content: [
+                    'Channel (Context Extension Pri ) State Appl. Data',
+                    '0 active channel(s)'
+                ].join(CRLF)
             });
         });
 
