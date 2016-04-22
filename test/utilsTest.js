@@ -29,7 +29,8 @@ describe('Event utils test', () => {
             'toArray',
             'toString',
             'fromObject',
-            'fromArray'
+            'fromArray',
+            'fromString'
         ]);
     });
 
@@ -164,6 +165,24 @@ describe('Event utils test', () => {
 
         it('without event\'s object', () => {
             assert.equal(''.repeat(2), eventUtil.fromObject());
+        });
+
+    });
+
+    describe('stringToRaw', () => {
+
+        it('valid event\'s string', () => {
+            let controlStr = 'control string';
+            assert.equal( controlStr + CRLF.repeat(2), eventUtil.fromString(`\r\r\n${controlStr}\n`));
+        });
+
+        it('empty event\'s string', () => {
+            let controlStr = '';
+            assert.equal( controlStr + CRLF.repeat(2), eventUtil.fromString(`\r\r\n${controlStr}\n`));
+        });
+
+        it('without event\'s string', () => {
+            assert.equal('', eventUtil.fromString());
         });
 
     });
