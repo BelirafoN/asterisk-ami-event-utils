@@ -81,6 +81,19 @@ describe('Event utils test', () => {
             });
         });
 
+        it('with hello message and response\'s raw string', () => {
+            let commandStr = [
+                    'Asterisk version x.x',
+                    'Response: Pong',
+                    'Value: 12345'
+                ].join(CRLF) + CRLF.repeat(2);
+
+            assert.deepEqual(eventUtil.toObject(commandStr), {
+                Response: 'Pong',
+                Value: '12345'
+            });
+        });
+
         it('with extended response\'s raw string', () => {
             let commandStr = [
                     'extended row 1',
@@ -104,7 +117,7 @@ describe('Event utils test', () => {
                     '0 active channel(s)',
                     '--END COMMAND--'
                 ].join(CRLF) + CRLF.repeat(2);
-            console.log(eventUtil.toObject(commandStr));
+            
             assert.deepEqual(eventUtil.toObject(commandStr), {
                 Response: 'Follows',
                 Privilege: 'Command',
