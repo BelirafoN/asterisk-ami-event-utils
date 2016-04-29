@@ -6,7 +6,8 @@
 [![npm version](https://badge.fury.io/js/asterisk-ami-event-utils.svg)](https://badge.fury.io/js/asterisk-ami-event-utils)
 
 Some service functions for parse\stringify raw data packages (events, actions, responses, extended responses) 
-from Asterisk AMI's socket. This library is a part of other library for work with Asterisk AMI, which will be release soon. 
+from Asterisk AMI's socket. 
+This library is a part of **[Asterisk's AMI Client](https://www.npmjs.com/package/asterisk-ami-client)** library.
 
 ### Install 
 
