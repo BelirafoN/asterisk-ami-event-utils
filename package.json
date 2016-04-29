@@ -1,6 +1,6 @@
 {
   "name": "asterisk-ami-event-utils",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Asterisk AMI Event Utils for NodeJS (ES2015)",
   "main": "./lib/index.js",
   "engines": {
