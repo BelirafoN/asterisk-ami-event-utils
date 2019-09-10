@@ -128,6 +128,26 @@ describe('Event utils test', () => {
             });
         });
 
+        it('with a multiline output response', () => {
+            let commandStr = [
+                    'Response: Success',
+                    'Message: Command output follows',
+                    'Output:   Version:                     16.1.1',
+                    'Output:   Build Options:               BUILD_NATIVE, OPTIONAL_API',
+                    'Output:   Maximum calls:               Not set'
+                ].join(CRLF) + CRLF.repeat(2);
+
+            assert.deepEqual(eventUtil.toObject(commandStr), {
+                Response: 'Success',
+                Message: 'Command output follows',
+                Output: [
+                    'Version:                     16.1.1',
+                    'Build Options:               BUILD_NATIVE, OPTIONAL_API',
+                    'Maximum calls:               Not set'
+                ].join(CRLF)
+            });
+        });
+
         it('without event\'s raw string', () => {
             assert.deepEqual(eventUtil.toObject(), {});
         });
